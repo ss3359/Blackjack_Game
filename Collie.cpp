@@ -61,7 +61,6 @@ void Blackjack::PlayerTurn(double PlayerBet, int PlayerTotal){
             PlayerTotal+= 2*(PlayerTotal);
             break;
         }
-        
         cout<<"Hit(H), Stand(S), DoubleDown(D) \n\n"<<endl;
         cin>>decision;
 
@@ -153,6 +152,11 @@ void Blackjack::PlayTheGame(double PlayerBet, int PlayerTotal, int DealerTotal){
     cout<<"Dealer Show Card: "<<Card4[0]+Card4[1]<<"\n\n";
     PlayerTurn(PlayerBet,PlayerTotal);
     
+    if(Card1[0]==Card3[0]){
+        
+    }
+    
+    
     if(PlayerTotal>21||DealerTotal==21)
         cout<<"Dealer Automatic Win. "<<endl;
     else if(PlayerTotal==21)
@@ -171,4 +175,27 @@ void Blackjack::PlayTheGame(double PlayerBet, int PlayerTotal, int DealerTotal){
     }
 }
 
+void Blackjack::split(double PlayerBet, string CardValueOne, string CardValueTwo){
+    string AddCard1[2]={CardValue[rand()%13],suit[rand()%4]};
+    string AddCard2[2]={CardValue[rand()%13],suit[rand()%4]};
+    char decision='0';
+    
+    int PlayerTotalOne=0, PlayerTotalTwo=0;
+    
+    cout<<"Split Cards (Z)?  \n\n"<<endl;
+    cin>>decision;
+    
+    if(decision=='Z'){
+        
+        
+        PlayerTotalOne=AddNumbers(AddCard1[0], PlayerTotalOne);
+        PlayerTotalTwo=AddNumbers(AddCard2[0], PlayerTotalTwo);
+        
+        PlayerTurn(PlayerBet, PlayerTotalOne);
+    }
+    else{
+        
+    }
+    
+}
 

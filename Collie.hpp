@@ -42,7 +42,7 @@ public:
     void DealerTurn(int DealerTotal, int PlayerTotal,double PlayerBet);
     
     int AddNumbers(string ValueOfCard, int total);
-    void split(string CardValueOne, string CardValueTwo);
+    void split(double PlayerBet, string CardValueOne, string CardValueTwo);
     double CompareTotals(int DealerTotal, int PlayerTotal, double PlayerBet);
 };
 
